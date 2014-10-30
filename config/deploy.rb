@@ -42,7 +42,7 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute 'sudo touch tmp/restart.txt'
+          execute :touch, 'tmp/restart.txt'
         end
       end
     end
