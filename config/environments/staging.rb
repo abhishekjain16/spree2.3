@@ -79,6 +79,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => '106.185.24.72' }
   config.action_mailer.asset_host = "106.185.24.72"
 
+  config.action_mailer.delivery_method = :smtp 
+
+  config.action_mailer.smtp_settings = { 
+    address: "127.0.0.1",
+    port: 25,
+    enable_starttls_auto: false,
+    domain: "spree2-3-stable.domain4now.com"
+  }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
